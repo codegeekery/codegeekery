@@ -45,9 +45,9 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 <!-- ARTICLES:START -->
 # Latest Blog Posts 📝
 
+- [How to Install and Configure MongoDB Community Edition Locally](https://www.codegeekery.com/posts/how-to-install-and-configure-mongodb-community-edition-locally)
 - [From Slow Bundlers to Lightning Speed: How ViteJS is Changing Frontend Dev](https://www.codegeekery.com/posts/from-slow-bundlers-to-lightning-speed-how-vitejs-is-changing-frontend-dev)
 - [Astro: The New #1 Framework in the State of JavaScript 2024](https://www.codegeekery.com/posts/astro-the-new-1-framework-in-the-state-of-javascript-2024)
-- [How to Optimize Web Performance: Best Practices](https://www.codegeekery.com/posts/how-to-optimize-web-performance-best-practices)
 
 [➡️ More blog posts](https://www.codegeekery.com/blog)
 <!-- ARTICLES:END -->
