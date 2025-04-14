@@ -45,9 +45,9 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 <!-- ARTICLES:START -->
 # Latest Blog Posts 📝
 
-- [simple](https://www.codegeekery.com/posts/simple)
 - [Cloudflare Secrets: Secure Storage for Your Credentials](https://www.codegeekery.com/posts/cloudflared-store-secrets)
 - [How to Install and Configure MongoDB Community Edition Locally](https://www.codegeekery.com/posts/how-to-install-and-configure-mongodb-community-edition-locally)
+- [From Slow Bundlers to Lightning Speed: How ViteJS is Changing Frontend Dev](https://www.codegeekery.com/posts/from-slow-bundlers-to-lightning-speed-how-vitejs-is-changing-frontend-dev)
 
 [➡️ More blog posts](https://www.codegeekery.com/blog)
 <!-- ARTICLES:END -->
