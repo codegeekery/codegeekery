@@ -45,9 +45,9 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 <!-- ARTICLES:START -->
 # Latest Blog Posts 📝
 
+- [De bug a boss: la evolución del desarrollador Full Stack](https://www.codegeekery.com/posts/de-bug-a-boss-la-evolucion-del-desarrollador-full-stack)
+- [¿Que es un MCP?](https://www.codegeekery.com/posts/que-es-un-mcp)
 - [Cloudflare Secrets: Almacenamiento Seguro para tus Credenciales](https://www.codegeekery.com/posts/cloudflare-secrets-almacenamiento-seguro-para-tus-credenciales)
-- [Cómo instalar y configurar MongoDB Community Edition localmente](https://www.codegeekery.com/posts/como-instalar-y-configurar-mongodb-community-edition-localmente)
-- [De Bundlers Lentos a Velocidad Relámpago Cómo ViteJS está Revolucionando el Desarrollo Frontend](https://www.codegeekery.com/posts/de-bundlers-lentos-a-velocidad-relampago-como-vitejs-esta-revolucionando-el-desarrollo-frontend)
 
 [➡️ More blog posts](https://www.codegeekery.com/blog)
 <!-- ARTICLES:END -->
