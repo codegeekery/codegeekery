@@ -45,9 +45,9 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 <!-- ARTICLES:START -->
 # Latest Blog Posts 📝
 
-- [Cloudflare Secrets: Secure Storage for Your Credentials](https://www.codegeekery.com/posts/cloudflared-store-secrets)
-- [How to Install and Configure MongoDB Community Edition Locally](https://www.codegeekery.com/posts/how-to-install-and-configure-mongodb-community-edition-locally)
-- [From Slow Bundlers to Lightning Speed: How ViteJS is Changing Frontend Dev](https://www.codegeekery.com/posts/from-slow-bundlers-to-lightning-speed-how-vitejs-is-changing-frontend-dev)
+- [Cloudflare Secrets: Almacenamiento Seguro para tus Credenciales](https://www.codegeekery.com/posts/cloudflare-secrets-almacenamiento-seguro-para-tus-credenciales)
+- [Cómo instalar y configurar MongoDB Community Edition localmente](https://www.codegeekery.com/posts/como-instalar-y-configurar-mongodb-community-edition-localmente)
+- [De Bundlers Lentos a Velocidad Relámpago Cómo ViteJS está Revolucionando el Desarrollo Frontend](https://www.codegeekery.com/posts/de-bundlers-lentos-a-velocidad-relampago-como-vitejs-esta-revolucionando-el-desarrollo-frontend)
 
 [➡️ More blog posts](https://www.codegeekery.com/blog)
 <!-- ARTICLES:END -->
