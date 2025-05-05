@@ -37,7 +37,7 @@ function fetchArticles() {
         client.close();
         resolve(articles.slice(0, 3));
       } catch (err) {
-        reject(new Error('Error al parsear JSON:' `${SECRET_KEY}` + err + '\nContenido:\n' + data.slice(0, 200)));
+        reject(new Error('Error al parsear JSON:' + err + '\nContenido:\n' + data.slice(0, 200)));
       }
     });
 
