@@ -1,6 +1,5 @@
 import * as fs from 'fs/promises';
-import * as http2 from 'node:http2';
-
+import got from 'got';
 
 
 const README_PATH = 'README.md';
@@ -16,35 +15,50 @@ if (!SECRET_KEY) {
   process.exit(1);
 }
 
-function fetchArticles() {
-  return new Promise((resolve, reject) => {
-    const client = http2.connect('https://www.codegeekery.com');
+// async function fetchArticles() {
+//   const res = await got('https://www.codegeekery.com/api/latest', {
+//     headers: {
+//       'X-CODEGEEKERY': "DECRDp4424bzqF27IBJFB3F460Nth39mzSDD8iAkQEYjqIBdolFl52lQMB4y62E1NsfvZiLf2FkI7CB7B41FD29F",
+//     },
+//     http2: true, // 👈 habilita HTTP/2 si el servidor lo permite
+//     responseType: 'json',
+//   });
 
-    client.on('error', reject);
+//   return res.body.slice(0, 3);
+// }
 
-    const req = client.request({
-      ':method': 'GET',
-      ':path': '/api/latest',
-      'X-CODEGEEKERY': SECRET_KEY,
+const WEBHOOK_URL = 'https://webhook.site/538f72a5-8094-4fbd-87a9-ca082401fad1';
+
+async function fetchArticles() {
+  try {
+    const res = await got('https://www.codegeekery.com/api/latest', {
+      headers: {
+        'X-CODEGEEKERY': "DECRDp4424bzqF27IBJFB3F460Nth39mzSDD8iAkQEYjqIBdolFl52lQMB4y62E1NsfvZiLf2FkI7CB7B41FD29F",
+      },
+      http2: true,
+      responseType: 'json',
     });
 
-    let data = '';
+    return res.body.slice(0, 3);
+  } catch (error) {
+    // Enviar error al webhook
+    await got.post(WEBHOOK_URL, {
+      json: {
+        message: 'Error fetching articles',
+        error: {
+          name: error.name,
+          message: error.message,
+          stack: error.stack,
+        },
+        timestamp: new Date().toISOString(),
+      },
+    }).catch(console.error); // Evita que un segundo error bloquee la ejecución
 
-    req.setEncoding('utf8');
-    req.on('data', chunk => data += chunk);
-    req.on('end', () => {
-      try {
-        const articles = JSON.parse(data);
-        client.close();
-        resolve(articles.slice(0, 3));
-      } catch (err) {
-        reject(new Error('Error al analizar la respuesta JSON: ' + err.message));
-      }
-    });
-
-    req.end();
-  });
+    // Relanzar el error si lo necesitas manejar más arriba
+    throw error;
+  }
 }
+
 
 async function updateReadme(articles) {
   const content = await fs.readFile(README_PATH, 'utf-8');
