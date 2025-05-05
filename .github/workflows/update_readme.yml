@@ -26,6 +26,7 @@ jobs:
       - name: Run script to update README
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
         run: npm run update-readme
 
       - name: Commit and push if changed

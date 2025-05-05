@@ -7,6 +7,7 @@ const START = '<!-- ARTICLES:START -->';
 const END = '<!-- ARTICLES:END -->';
 
 const SECRET_KEY = process.env.SECRET_KEY;
+const USER_AGENT = process.env.USER_AGENT
 const BASE_URL = 'https://www.codegeekery.com/blog';
 const BASE_POST_URL = 'https://www.codegeekery.com/posts/';
 
@@ -19,7 +20,7 @@ async function fetchArticles() {
   const res = await got('https://www.codegeekery.com/api/latest', {
     headers: {
       'X-CODEGEEKERY': SECRET_KEY,
-      'User-Agent': "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0 CodeGeekery/1.0"
+      'User-Agent': USER_AGENT
     },
     http2: true,
     responseType: 'json',
