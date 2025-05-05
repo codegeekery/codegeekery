@@ -37,6 +37,7 @@ function fetchArticles() {
         client.close();
         resolve(articles.slice(0, 3));
       } catch (err) {
+        console.log(SECRET_KEY)
         reject(new Error('Error al parsear JSON: ' + err + '\nContenido:\n' + data.slice(0, 200)));
       }
     });
