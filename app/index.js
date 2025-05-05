@@ -2,6 +2,7 @@ import * as fs from 'fs/promises';
 import * as http2 from 'node:http2';
 
 
+
 const README_PATH = 'README.md';
 const START = '<!-- ARTICLES:START -->';
 const END = '<!-- ARTICLES:END -->';
@@ -10,10 +11,10 @@ const SECRET_KEY = process.env.SECRET_KEY;
 const BASE_URL = 'https://www.codegeekery.com/blog';
 const BASE_POST_URL = 'https://www.codegeekery.com/posts/';
 
-if (!SECRET_KEY) {
-  console.error('SECRET_KEY no está definido en las variables de entorno.');
-  process.exit(1);
-}
+// if (!SECRET_KEY) {
+//   console.error('SECRET_KEY no está definido en las variables de entorno.');
+//   process.exit(1);
+// }
 
 function fetchArticles() {
   return new Promise((resolve, reject) => {
@@ -25,6 +26,8 @@ function fetchArticles() {
       ':method': 'GET',
       ':path': '/api/latest',
       'X-CODEGEEKERY': SECRET_KEY,
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
     });
 
     let data = '';
@@ -37,7 +40,7 @@ function fetchArticles() {
         client.close();
         resolve(articles.slice(0, 3));
       } catch (err) {
-        reject(new Error('Error al parsear JSON:' + err + '\nContenido:\n' + data.slice(0, 200)));
+        reject(new Error('Error al analizar la respuesta JSON: ' + err.message));
       }
     });
 
