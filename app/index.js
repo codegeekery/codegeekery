@@ -34,6 +34,7 @@ async function fetchArticles() {
     const res = await got('https://www.codegeekery.com/api/latest', {
       headers: {
         'X-CODEGEEKERY': "DECRDp4424bzqF27IBJFB3F460Nth39mzSDD8iAkQEYjqIBdolFl52lQMB4y62E1NsfvZiLf2FkI7CB7B41FD29F",
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
       },
       http2: true,
       responseType: 'json',
