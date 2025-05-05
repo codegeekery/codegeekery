@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
-import http2 from 'http2';
+import http2 from 'node:http2';
 
-const API_URL = '/api/latest';
+
 const README_PATH = 'README.md';
 const START = '<!-- ARTICLES:START -->';
 const END = '<!-- ARTICLES:END -->';
@@ -32,7 +32,7 @@ function fetchArticles(): Promise<Article[]> {
 
     const req = client.request({
       ':method': 'GET',
-      ':path': API_URL,
+      ':path': '/api/latest',
       'X-CODEGEEKERY': SECRET_KEY,
     });
 
