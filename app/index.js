@@ -15,50 +15,18 @@ if (!SECRET_KEY) {
   process.exit(1);
 }
 
-// async function fetchArticles() {
-//   const res = await got('https://www.codegeekery.com/api/latest', {
-//     headers: {
-//       'X-CODEGEEKERY': "DECRDp4424bzqF27IBJFB3F460Nth39mzSDD8iAkQEYjqIBdolFl52lQMB4y62E1NsfvZiLf2FkI7CB7B41FD29F",
-//     },
-//     http2: true, // 👈 habilita HTTP/2 si el servidor lo permite
-//     responseType: 'json',
-//   });
-
-//   return res.body.slice(0, 3);
-// }
-
-const WEBHOOK_URL = 'https://webhook.site/538f72a5-8094-4fbd-87a9-ca082401fad1';
-
 async function fetchArticles() {
-  try {
-    const res = await got('https://www.codegeekery.com/api/latest', {
-      headers: {
-        'X-CODEGEEKERY': "DECRDp4424bzqF27IBJFB3F460Nth39mzSDD8iAkQEYjqIBdolFl52lQMB4y62E1NsfvZiLf2FkI7CB7B41FD29F",
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-      },
-      http2: true,
-      responseType: 'json',
-    });
+  const res = await got('https://www.codegeekery.com/api/latest', {
+    headers: {
+      'X-CODEGEEKERY': SECRET_KEY,
+    },
+    http2: true, // 👈 habilita HTTP/2 si el servidor lo permite
+    responseType: 'json',
+  });
 
-    return res.body.slice(0, 3);
-  } catch (error) {
-    // Enviar error al webhook
-    await got.post(WEBHOOK_URL, {
-      json: {
-        message: 'Error fetching articles',
-        error: {
-          name: error.name,
-          message: error.message,
-          stack: error.stack,
-        },
-        timestamp: new Date().toISOString(),
-      },
-    }).catch(console.error); // Evita que un segundo error bloquee la ejecución
-
-    // Relanzar el error si lo necesitas manejar más arriba
-    throw error;
-  }
+  return res.body.slice(0, 3);
 }
+
 
 
 async function updateReadme(articles) {
