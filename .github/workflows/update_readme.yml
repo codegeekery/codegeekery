@@ -1,8 +1,11 @@
 name: Update README
+
 on:
   schedule:
     - cron: '0 */6 * * *'  # Cada 6 horas
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   update:
@@ -11,8 +14,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          ref: 'main'
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -28,12 +29,12 @@ jobs:
       - name: Run script to update README
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        run: npm run update-readme
+        run: node dist/index.js
 
       - name: Commit and push if changed
         run: |
           git config user.name "codegeekery"
           git config user.email "85375414+codegeekery@users.noreply.github.com"
-          git add README.md
+          git add README.md ./dist/*
           git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Update README with latest info"
           git push origin main

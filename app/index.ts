@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import http2 from 'http2';
 
-const API_URL = 'https://www.codegeekery.com/api/latest';
+const API_URL = '/api/latest';
 const README_PATH = 'README.md';
 const START = '<!-- ARTICLES:START -->';
 const END = '<!-- ARTICLES:END -->';
@@ -32,8 +32,8 @@ function fetchArticles(): Promise<Article[]> {
 
     const req = client.request({
       ':method': 'GET',
-      ':path': '/api/latest',
-      'X-CODEGEEKERY': "DECRDp4424bzqF27IBJFB3F460Nth39mzSDD8iAkQEYjqIBdolFl52lQMB4y62E1NsfvZiLf2FkI7CB7B41FD29F",
+      ':path': API_URL,
+      'X-CODEGEEKERY': SECRET_KEY,
     });
 
     let data = '';
