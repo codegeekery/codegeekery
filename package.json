@@ -13,9 +13,9 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "app/index.ts",
   "scripts": {
-     "update-readme": "node dist/index.js"
+    "update-readme": "node dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^22.13.13",
