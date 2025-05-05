@@ -44,14 +44,9 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 # Latest Blog Posts 📝
 <!-- ARTICLES:START -->
-[![Ruta Para desarrollador Backend](https://cdn.sanity.io/images/dtnjj5n5/production/4d1a6e650223df9ef093348197802b78a391a7e3-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/ruta-para-desarrollador-backend)
-**[Ruta Para desarrollador Backend](https://www.codegeekery.com/posts/ruta-para-desarrollador-backend)**
-
-[![De bug a boss: la evolución del desarrollador Full Stack](https://cdn.sanity.io/images/dtnjj5n5/production/e97e89a07392c52fe9fb32fe2c9c0357c6edf180-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/de-bug-a-boss-la-evolucion-del-desarrollador-full-stack)
-**[De bug a boss: la evolución del desarrollador Full Stack](https://www.codegeekery.com/posts/de-bug-a-boss-la-evolucion-del-desarrollador-full-stack)**
-
-[![¿Que es un MCP?](https://cdn.sanity.io/images/dtnjj5n5/production/9f3755d462c7f9bc2fa7ff93df85cb2d45305768-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/que-es-un-mcp)
-**[¿Que es un MCP?](https://www.codegeekery.com/posts/que-es-un-mcp)**
+[![Ruta Para desarrollador Backend](https://cdn.sanity.io/images/dtnjj5n5/production/4d1a6e650223df9ef093348197802b78a391a7e3-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/ruta-para-desarrollador-backend) | [![De bug a boss: la evolución del desarrollador Full Stack](https://cdn.sanity.io/images/dtnjj5n5/production/e97e89a07392c52fe9fb32fe2c9c0357c6edf180-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/de-bug-a-boss-la-evolucion-del-desarrollador-full-stack) | [![¿Que es un MCP?](https://cdn.sanity.io/images/dtnjj5n5/production/9f3755d462c7f9bc2fa7ff93df85cb2d45305768-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/que-es-un-mcp)
+--- | --- | ---
+**[Ruta Para desarrollador Backend](https://www.codegeekery.com/posts/ruta-para-desarrollador-backend)** | **[De bug a boss: la evolución del desarrollador Full Stack](https://www.codegeekery.com/posts/de-bug-a-boss-la-evolucion-del-desarrollador-full-stack)** | **[¿Que es un MCP?](https://www.codegeekery.com/posts/que-es-un-mcp)**
 
 [➡️ More blog posts](https://www.codegeekery.com/blog)
 <!-- ARTICLES:END -->

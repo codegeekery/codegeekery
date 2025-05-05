@@ -57,24 +57,39 @@ function fetchArticles(): Promise<Article[]> {
 async function updateReadme(articles: Article[]) {
   const content = await fs.readFile(README_PATH, 'utf-8');
 
-  const articleEntries = articles.map(post => {
-    const baseImageUrl = post.mainImage.asset.url;
-    const imageUrl = `${baseImageUrl}?w=200&h=200`; // Agregado w=200&h=200
-    const link = `${BASE_POST_URL}${post.slug.current}`;
-    return `[![${post.title}](${imageUrl})](${link})\n**[${post.title}](${link})**`;
-  }).join('\n\n');
+  const rows: string[] = [];
+  const columnsPerRow = 3;
 
-  const moreLink = `[➡️ More blog posts](${BASE_URL})`;
+  // Construimos filas de imágenes enlazadas
+  for (let i = 0; i < articles.length; i += columnsPerRow) {
+    const rowArticles = articles.slice(i, i + columnsPerRow);
 
-  const newSection = `${articleEntries}\n\n${moreLink}`;
+    const imageRow = rowArticles.map(post => {
+      const imageUrl = `${post.mainImage.asset.url}?w=200&h=200`;
+      const link = `${BASE_POST_URL}${post.slug.current}`;
+      return `[![${post.title}](${imageUrl})](${link})`;
+    }).join(' | ');
+
+    const titleRow = rowArticles.map(post => {
+      const link = `${BASE_POST_URL}${post.slug.current}`;
+      return `**[${post.title}](${link})**`;
+    }).join(' | ');
+
+    const separator = rowArticles.map(() => '---').join(' | ');
+
+    rows.push(imageRow, separator, titleRow);
+  }
+
+  const tableMarkdown = rows.join('\n') + `\n\n[➡️ More blog posts](${BASE_URL})`;
 
   const updated = content.replace(
     new RegExp(`${START}[\\s\\S]*?${END}`),
-    `${START}\n${newSection}\n${END}`
+    `${START}\n${tableMarkdown}\n${END}`
   );
 
   await fs.writeFile(README_PATH, updated);
 }
+
 
 
 (async () => {
