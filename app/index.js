@@ -21,7 +21,7 @@ async function fetchArticles() {
       'X-CODEGEEKERY': SECRET_KEY,
       'User-Agent': "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0 CodeGeekery/1.0"
     },
-    http2: true, // 👈 habilita HTTP/2 si el servidor lo permite
+    http2: true,
     responseType: 'json',
   });
 
