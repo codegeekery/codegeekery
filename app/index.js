@@ -11,10 +11,10 @@ const SECRET_KEY = process.env.SECRET_KEY;
 const BASE_URL = 'https://www.codegeekery.com/blog';
 const BASE_POST_URL = 'https://www.codegeekery.com/posts/';
 
-// if (!SECRET_KEY) {
-//   console.error('SECRET_KEY no está definido en las variables de entorno.');
-//   process.exit(1);
-// }
+if (!SECRET_KEY) {
+  console.error('SECRET_KEY no está definido en las variables de entorno.');
+  process.exit(1);
+}
 
 function fetchArticles() {
   return new Promise((resolve, reject) => {
@@ -26,8 +26,6 @@ function fetchArticles() {
       ':method': 'GET',
       ':path': '/api/latest',
       'X-CODEGEEKERY': SECRET_KEY,
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
     });
 
     let data = '';

@@ -24,8 +24,6 @@ jobs:
         run: npm ci
 
       - name: Run script to update README
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: npm run update-readme
 
       - name: Commit and push if changed
