@@ -1,5 +1,5 @@
-import fs from 'fs/promises';
-import http2 from 'node:http2';
+import * as fs from 'fs/promises';
+import * as http2 from 'node:http2';
 
 
 const README_PATH = 'README.md';
