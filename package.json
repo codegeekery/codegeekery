@@ -13,9 +13,9 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "update-readme": "node dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^22.13.13",

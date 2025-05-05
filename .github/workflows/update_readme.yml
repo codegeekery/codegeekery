@@ -1,49 +1,38 @@
-name: Update README with Latest Articles
+name: Update README
 
 on:
   schedule:
-    - cron: '0 */3 * * *'
-  push:
-    branches:
-      - main
+    - cron: '0 */6 * * *'  # Cada 6 horas
+  workflow_dispatch:
 
 jobs:
-  update-readme:
+  update:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-    - name: Install dependencies
-      run: |
-        npm ci
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Compile TypeScript
-      run: npx tsc
+      - name: Compile TypeScript
+        run: npx tsc index.ts
 
-    - name: Fetch latest articles JSON
-      run: |
-        curl -H "X-CODEGEEKERY: ${{ secrets.SECRET_KEY }}" -o ./dist/post-latest.json "https://www.codegeekery.com/api/latest"
+      - name: Run script to update README
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        run: npm run update-readme
 
-    - name: Run script to update README.md
-      run: node ./dist/updates-readme.js
-
-    - name: Pull latest changes
-      run: |
-        git pull origin main
-
-    - name: Commit and push changes
-      run: |
-        git config --global user.name "codegeekery"
-        git config --global user.email "85375414+codegeekery@users.noreply.github.com"
-        git add README.md ./dist/*
-        git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Update README with latest info"
-        git push origin main
-
-
+      - name: Commit and push if changed
+        run: |
+          git config user.name "codegeekery"
+          git config user.email "85375414+codegeekery@users.noreply.github.com"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Update README with latest info"
+          git push origin main
