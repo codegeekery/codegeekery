@@ -2,24 +2,23 @@
   "name": "codegeekery",
   "version": "1.0.0",
   "description": "Hola Fellows 👋, me llamo **Juan** y nací en **1999**.",
-  "homepage": "https://github.com/codegeekery/jcfgDEV#readme",
+  "homepage": "https://github.com/codegeekery/codegeekery#readme",
   "bugs": {
-    "url": "https://github.com/codegeekery/jcfgDEV/issues"
+    "url": "https://github.com/codegeekery/codegeekery/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codegeekery/jcfgDEV.git"
+    "url": "git+https://github.com/codegeekery/codegeekery.git"
   },
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "app/index.ts",
+  "main": "app/index.js",
   "scripts": {
-    "update-readme": "node dist/index.js"
+    "update-readme": "node app/index.js"
   },
   "devDependencies": {
-    "@types/node": "^22.13.13",
-    "typescript": "^5.8.2"
+    "@types/node": "^22.13.13"
   },
   "dependencies": {
     "node-fetch": "^3.3.2"

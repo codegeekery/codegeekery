@@ -6,25 +6,16 @@ const README_PATH = 'README.md';
 const START = '<!-- ARTICLES:START -->';
 const END = '<!-- ARTICLES:END -->';
 
-const SECRET_KEY = process.env.SECRET_KEY!;
+const SECRET_KEY = process.env.SECRET_KEY;
 const BASE_URL = 'https://www.codegeekery.com/blog';
 const BASE_POST_URL = 'https://www.codegeekery.com/posts/';
 
-interface Article {
-  _id: string;
-  title: string;
-  slug: {
-    current: string;
-    _type: string;
-  };
-  mainImage: {
-    asset: {
-      url: string;
-    };
-  };
+if (!SECRET_KEY) {
+  console.error('SECRET_KEY no está definido en las variables de entorno.');
+  process.exit(1);
 }
 
-function fetchArticles(): Promise<Article[]> {
+function fetchArticles() {
   return new Promise((resolve, reject) => {
     const client = http2.connect('https://www.codegeekery.com');
 
@@ -42,7 +33,7 @@ function fetchArticles(): Promise<Article[]> {
     req.on('data', chunk => data += chunk);
     req.on('end', () => {
       try {
-        const articles: Article[] = JSON.parse(data);
+        const articles = JSON.parse(data);
         client.close();
         resolve(articles.slice(0, 3));
       } catch (err) {
@@ -54,13 +45,12 @@ function fetchArticles(): Promise<Article[]> {
   });
 }
 
-async function updateReadme(articles: Article[]) {
+async function updateReadme(articles) {
   const content = await fs.readFile(README_PATH, 'utf-8');
 
-  const rows: string[] = [];
+  const rows = [];
   const columnsPerRow = 3;
 
-  // Construimos filas de imágenes enlazadas
   for (let i = 0; i < articles.length; i += columnsPerRow) {
     const rowArticles = articles.slice(i, i + columnsPerRow);
 
@@ -89,8 +79,6 @@ async function updateReadme(articles: Article[]) {
 
   await fs.writeFile(README_PATH, updated);
 }
-
-
 
 (async () => {
   try {
