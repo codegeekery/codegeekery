@@ -1,38 +1,30 @@
-name: Update README
+name: Update README.md
 
 on:
-  schedule:
-    - cron: '0 */6 * * *'
   push:
     branches:
-      - production
+      - master
+  workflow_dispatch:
+  
+  schedule:
+    - cron: "0 */4 * * *"
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run script to update README
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          USER_AGENT: ${{ secrets.USER_AGENT }}
-        run: npm run update-readme
-
-      - name: Commit and push if changed
-        run: |
-          git config user.name "codegeekery"
-          git config user.email "85375414+codegeekery@users.noreply.github.com"
-          git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update README with latest info"
-          git push origin production
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - run: npm run update-readme
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        USER_AGENT: ${{ secrets.USER_AGENT }}
+    - run: |
+        git config user.name "codegeekery"
+        git config user.email "85375414+codegeekery@users.noreply.github.com"
+        git add README.md
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update README with latest info"
+        git push origin production
