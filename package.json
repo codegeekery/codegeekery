@@ -13,7 +13,7 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "app/index.js",
+  "main": "index.js",
   "scripts": {
     "update-readme": "node app/index.js"
   }

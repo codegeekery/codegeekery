@@ -25,7 +25,7 @@ async function fetchArticles() {
       ':method': 'GET',
       ':path': url.pathname,
       'X-CODEGEEKERY': SECRET_KEY,
-      'User-Agent': USER_AGENT || 'Node.js',
+      'User-Agent': USER_AGENT,
     });
 
     let data = '';
