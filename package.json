@@ -15,6 +15,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "update-readme": "node app/index.js"
+    "update-readme": "node app/index.js",
+    "development": "node --env-file=.env app/index.js"
   }
 }

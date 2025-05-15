@@ -10,6 +10,7 @@ const SECRET_KEY = process.env.SECRET_KEY;
 const USER_AGENT = process.env.USER_AGENT;
 const BASE_URL = 'https://www.codegeekery.com/blog';
 const BASE_POST_URL = 'https://www.codegeekery.com/posts/';
+const TIMESTAMP_REGEX = /<!-- Última actualización: .*?-->/;
 
 if (!SECRET_KEY) {
   console.error('SECRET_KEY no está definido en las variables de entorno.');
@@ -81,10 +82,21 @@ async function updateReadme(articles) {
 
   const tableMarkdown = rows.join('\n') + `\n\n[➡️ More blog posts](${BASE_URL})`;
 
-  const updated = content.replace(
+  let updated = content.replace(
     new RegExp(`${START}[\\s\\S]*?${END}`),
     `${START}\n${tableMarkdown}\n${END}`
   );
+
+  // 🔁 Añadir o actualizar el timestamp
+  const timestamp = new Date().toISOString();
+  const TIMESTAMP_REGEX = /<!-- Última actualización: .*?-->/;
+  const newTimestampLine = `<!-- Última actualización: ${timestamp} -->`;
+
+  if (TIMESTAMP_REGEX.test(updated)) {
+    updated = updated.replace(TIMESTAMP_REGEX, newTimestampLine);
+  } else {
+    updated += `\n${newTimestampLine}\n`;
+  }
 
   await writeFile(README_PATH, updated);
 }
