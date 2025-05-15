@@ -1,13 +1,13 @@
-import * as fs from 'fs/promises';
-import got from 'got';
-
+import { readFile, writeFile } from 'fs/promises';
+import { connect } from 'http2';
+import { URL } from 'url';
 
 const README_PATH = 'README.md';
 const START = '<!-- ARTICLES:START -->';
 const END = '<!-- ARTICLES:END -->';
 
 const SECRET_KEY = process.env.SECRET_KEY;
-const USER_AGENT = process.env.USER_AGENT
+const USER_AGENT = process.env.USER_AGENT;
 const BASE_URL = 'https://www.codegeekery.com/blog';
 const BASE_POST_URL = 'https://www.codegeekery.com/posts/';
 
@@ -17,22 +17,45 @@ if (!SECRET_KEY) {
 }
 
 async function fetchArticles() {
-  const res = await got('https://www.codegeekery.com/api/latest', {
-    headers: {
-      'X-CODEGEEKERY': SECRET_KEY,
-      'User-Agent': USER_AGENT
-    },
-    http2: true,
-    responseType: 'json',
-  });
+  return new Promise((resolve, reject) => {
+    const url = new URL('https://www.codegeekery.com/api/latest');
+    const client = connect(url.origin);
 
-  return res.body.slice(0, 3);
+    const req = client.request({
+      ':method': 'GET',
+      ':path': url.pathname,
+      'X-CODEGEEKERY': SECRET_KEY,
+      'User-Agent': USER_AGENT || 'Node.js',
+    });
+
+    let data = '';
+    req.setEncoding('utf8');
+
+    req.on('data', chunk => {
+      data += chunk;
+    });
+
+    req.on('end', () => {
+      client.close();
+      try {
+        const json = JSON.parse(data);
+        resolve(json.slice(0, 3));
+      } catch (err) {
+        reject(new Error('Error parseando JSON: ' + err.message));
+      }
+    });
+
+    req.on('error', err => {
+      client.close();
+      reject(err);
+    });
+
+    req.end();
+  });
 }
 
-
-
 async function updateReadme(articles) {
-  const content = await fs.readFile(README_PATH, 'utf-8');
+  const content = await readFile(README_PATH, 'utf-8');
 
   const rows = [];
   const columnsPerRow = 3;
@@ -63,15 +86,13 @@ async function updateReadme(articles) {
     `${START}\n${tableMarkdown}\n${END}`
   );
 
-  await fs.writeFile(README_PATH, updated);
+  await writeFile(README_PATH, updated);
 }
 
-(async () => {
-  try {
-    const articles = await fetchArticles();
-    await updateReadme(articles);
-  } catch (err) {
-    console.error('Error actualizando README:', err);
-    process.exit(1);
-  }
-})();
+try {
+  const articles = await fetchArticles();
+  await updateReadme(articles);
+} catch (err) {
+  console.error('Error actualizando README:', err);
+  process.exit(1);
+}
