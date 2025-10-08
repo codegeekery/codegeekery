@@ -44,7 +44,7 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 # Latest Blog Posts 📝
 
-<!-- Última actualización: 2025-10-08T12:11:27.873Z -->
+<!-- Última actualización: 2025-10-08T18:09:13.616Z -->
 
 <!-- ARTICLES:START -->
 [![Desagregación: una nueva arquitectura para bases de datos en la nube](https://cdn.sanity.io/images/dtnjj5n5/production/75ce6050ab921dd16938ab1f224319f2e93a051a-1536x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/d07dbc4b-c019-493c-9295-cefc1b3ccd22) | [![Adiós SendGrid: Mi experiencia usando Resend con React Email](https://cdn.sanity.io/images/dtnjj5n5/production/72ed06bcbba2b789f6bf77970b95c4fff0983bb6-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/28ecc595-4656-4a6c-8542-ed25869322c2) | [![Pasé de JavaScript a TypeScript: así me fue](https://cdn.sanity.io/images/dtnjj5n5/production/2ba406cc0be935ad51fa4534c323b905378523d4-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/7fd987b3-7e05-4c06-a5e7-f0fa5ad942ae)
