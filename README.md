@@ -44,12 +44,12 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 # Latest Blog Posts 📝
 
-<!-- Última actualización: 2025-10-12T12:09:38.782Z -->
+<!-- Última actualización: 2025-10-12T18:07:53.522Z -->
 
 <!-- ARTICLES:START -->
-[![Desagregación: una nueva arquitectura para bases de datos en la nube](https://cdn.sanity.io/images/dtnjj5n5/production/75ce6050ab921dd16938ab1f224319f2e93a051a-1536x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/d07dbc4b-c019-493c-9295-cefc1b3ccd22) | [![Adiós SendGrid: Mi experiencia usando Resend con React Email](https://cdn.sanity.io/images/dtnjj5n5/production/72ed06bcbba2b789f6bf77970b95c4fff0983bb6-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/28ecc595-4656-4a6c-8542-ed25869322c2) | [![Pasé de JavaScript a TypeScript: así me fue](https://cdn.sanity.io/images/dtnjj5n5/production/2ba406cc0be935ad51fa4534c323b905378523d4-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/7fd987b3-7e05-4c06-a5e7-f0fa5ad942ae)
+[![Faker: una herramienta para generar datos ficticios](https://cdn.sanity.io/images/dtnjj5n5/production/0523f576d182ea9a582e0e5c1e67dd2df3c149d8-1024x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/fa1ba9c7-9233-4394-a9fe-e09f97ac65b7) | [![Desagregación: una nueva arquitectura para bases de datos en la nube](https://cdn.sanity.io/images/dtnjj5n5/production/75ce6050ab921dd16938ab1f224319f2e93a051a-1536x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/d07dbc4b-c019-493c-9295-cefc1b3ccd22) | [![Adiós SendGrid: Mi experiencia usando Resend con React Email](https://cdn.sanity.io/images/dtnjj5n5/production/72ed06bcbba2b789f6bf77970b95c4fff0983bb6-1024x1024.png?w=200&h=200)](https://www.codegeekery.com/posts/28ecc595-4656-4a6c-8542-ed25869322c2)
 --- | --- | ---
-**[Desagregación: una nueva arquitectura para bases de datos en la nube](https://www.codegeekery.com/posts/d07dbc4b-c019-493c-9295-cefc1b3ccd22)** | **[Adiós SendGrid: Mi experiencia usando Resend con React Email](https://www.codegeekery.com/posts/28ecc595-4656-4a6c-8542-ed25869322c2)** | **[Pasé de JavaScript a TypeScript: así me fue](https://www.codegeekery.com/posts/7fd987b3-7e05-4c06-a5e7-f0fa5ad942ae)**
+**[Faker: una herramienta para generar datos ficticios](https://www.codegeekery.com/posts/fa1ba9c7-9233-4394-a9fe-e09f97ac65b7)** | **[Desagregación: una nueva arquitectura para bases de datos en la nube](https://www.codegeekery.com/posts/d07dbc4b-c019-493c-9295-cefc1b3ccd22)** | **[Adiós SendGrid: Mi experiencia usando Resend con React Email](https://www.codegeekery.com/posts/28ecc595-4656-4a6c-8542-ed25869322c2)**
 
 [➡️ More blog posts](https://www.codegeekery.com/blog)
 <!-- ARTICLES:END -->
