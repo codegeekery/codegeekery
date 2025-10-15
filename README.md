@@ -44,7 +44,7 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 # Latest Blog Posts 📝
 
-<!-- Última actualización: 2025-10-15T12:11:45.058Z -->
+<!-- Última actualización: 2025-10-15T18:09:14.486Z -->
 
 <!-- ARTICLES:START -->
 [![Corre tus Modelos de IA Donde Quieras con Ollama](https://cdn.sanity.io/images/dtnjj5n5/production/83f220636bc40eba3e73c3d034b2632b905dad87-1536x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/bef394d0-01ad-4bc7-8007-ca6941823d56) | [![Faker: una herramienta para generar datos ficticios](https://cdn.sanity.io/images/dtnjj5n5/production/0523f576d182ea9a582e0e5c1e67dd2df3c149d8-1024x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/fa1ba9c7-9233-4394-a9fe-e09f97ac65b7) | [![Desagregación: una nueva arquitectura para bases de datos en la nube](https://cdn.sanity.io/images/dtnjj5n5/production/75ce6050ab921dd16938ab1f224319f2e93a051a-1536x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/d07dbc4b-c019-493c-9295-cefc1b3ccd22)
