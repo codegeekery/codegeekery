@@ -16,79 +16,90 @@ type Post struct {
 }
 
 func main() {
-	// Consumimos las variables de ambiente
+	// Variables de ambiente
 	basePostURL := os.Getenv("BASE_POST_URL")
-	baseAPIURL  := os.Getenv("BASE_API_URL")
+	baseAPIURL := os.Getenv("BASE_API_URL")
 	
-	// Valores por defecto para tags y nombre de archivo
 	fileName := "README.md"
-	startTag := "<!-- ARTICLES:START -->"
-	endTag   := "<!-- ARTICLES:END -->"
+	startTag := ""
+	endTag := ""
 
 	if baseAPIURL == "" || basePostURL == "" {
-		fmt.Println("Error: BASE_API_URL o BASE_POST_URL no están definidas")
+		fmt.Println("❌ Error: BASE_API_URL o BASE_POST_URL no están definidas")
 		return
 	}
 
-	// 1. Obtener datos de tu API
+	// 1. Obtener datos de Astral Kernel
 	resp, err := http.Get(baseAPIURL)
 	if err != nil {
-		fmt.Printf("Error llamando a la API: %v\n", err)
+		fmt.Printf("❌ Error de red: %v\n", err)
 		return
 	}
 	defer resp.Body.Close()
 
 	body, _ := io.ReadAll(resp.Body)
+
+	// Manejo del error del JSON (el famoso carácter 'A')
+	if resp.StatusCode != http.StatusOK {
+		fmt.Printf("⚠️ API Error %d: %s\n", resp.StatusCode, string(body))
+		return
+	}
+
 	var posts []Post
 	if err := json.Unmarshal(body, &posts); err != nil {
-		fmt.Printf("Error parseando JSON: %v\n", err)
+		fmt.Printf("❌ Error parseando JSON: %v\n📥 Recibido: %s\n", err, string(body))
 		return
 	}
 
-	// 2. Construir la tabla Markdown
-	markdownTable := generateTable(posts, basePostURL)
-
-	// 3. Leer y actualizar el archivo
-	content, err := os.ReadFile(fileName)
-	if err != nil {
-		fmt.Printf("No se pudo leer el archivo: %v\n", err)
+	// Verificamos que existan los 3 posts para evitar pánico al acceder por índice
+	if len(posts) < 3 {
+		fmt.Println("⚠️ La API devolvió menos de 3 posts.")
 		return
 	}
 
+	// 2. Construir la tabla (Sin usar FOR)
+	cleanBase := strings.TrimSuffix(basePostURL, "/")
+
+	// Fila 1: Imágenes
+	row1 := fmt.Sprintf("[![%s](%s?w=200&h=200)](%s/%s) | [![%s](%s?w=200&h=200)](%s/%s) | [![%s](%s?w=200&h=200)](%s/%s)",
+		posts[0].Title, posts[0].ImageUrl, cleanBase, posts[0].Slug,
+		posts[1].Title, posts[1].ImageUrl, cleanBase, posts[1].Slug,
+		posts[2].Title, posts[2].ImageUrl, cleanBase, posts[2].Slug,
+	)
+
+	row2 := "--- | --- | ---"
+
+	// Fila 3: Títulos
+	row3 := fmt.Sprintf("**[%s](%s/%s)** | **[%s](%s/%s)** | **[%s](%s/%s)**",
+		posts[0].Title, cleanBase, posts[0].Slug,
+		posts[1].Title, cleanBase, posts[1].Slug,
+		posts[2].Title, cleanBase, posts[2].Slug,
+	)
+
+	markdownTable := row1 + "\n" + row2 + "\n" + row3
+
+	// 3. Actualizar el README.md
+	content, _ := os.ReadFile(fileName)
 	strContent := string(content)
-	startIndex := strings.Index(strContent, startTag)
-	endIndex := strings.Index(strContent, endTag)
 
-	if startIndex == -1 || endIndex == -1 {
-		fmt.Println("No se encontraron los tags o ")
+	// Buscamos la posición de los tags
+	startIdx := strings.Index(strContent, startTag)
+	endIdx := strings.Index(strContent, endTag)
+
+	if startIdx == -1 || endIdx == -1 {
+		fmt.Println("❌ No se encontraron los marcadores en el README")
 		return
 	}
 
-	// Reensamblar el archivo respetando los tags
-	newContent := strContent[:startIndex+len(startTag)] +
-		"\n" + markdownTable + "\n" +
-		strContent[endIndex:]
+	// Reemplazamos el bloque completo manteniendo los marcadores
+	// Usamos slicing para inyectar la tabla justo en medio
+	newContent := strContent[:startIdx+len(startTag)] + "\n\n" + markdownTable + "\n\n" + strContent[endIdx:]
 
 	err = os.WriteFile(fileName, []byte(newContent), 0644)
 	if err != nil {
-		fmt.Printf("Error escribiendo el README: %v\n", err)
+		fmt.Printf("❌ Error escribiendo archivo: %v\n", err)
 		return
 	}
 
-	fmt.Println("🚀 README actualizado correctamente con variables de entorno!")
-}
-
-func generateTable(posts []Post, basePostURL string) string {
-	var row1, row2, row3 []string
-
-	for _, p := range posts {
-		// Aseguramos que el slash final no se duplique
-		fullURL := strings.TrimSuffix(basePostURL, "/") + "/" + p.Slug
-		
-		row1 = append(row1, fmt.Sprintf("[![%s](%s?w=200&h=200)](%s)", p.Title, p.ImageUrl, fullURL))
-		row2 = append(row2, "---")
-		row3 = append(row3, fmt.Sprintf("**[%s](%s)**", p.Title, fullURL))
-	}
-
-	return strings.Join(row1, " | ") + "\n" + strings.Join(row2, " | ") + "\n" + strings.Join(row3, " | ")
+	fmt.Println("🚀 README actualizado con éxito y sin bucles for!")
 }
