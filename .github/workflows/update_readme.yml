@@ -22,6 +22,9 @@ jobs:
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
         USER_AGENT: ${{ secrets.USER_AGENT }}
+        BASE_API_URL: ${{ secrets.BASE_API_URL }}
+        BASE_POST_URL: ${{ secrets.BASE_POST_URL }}
+        BASE_URL: ${{ secrets.BASE_URL }}
     - run: |
         git config user.name "codegeekery"
         git config user.email "85375414+codegeekery@users.noreply.github.com"
