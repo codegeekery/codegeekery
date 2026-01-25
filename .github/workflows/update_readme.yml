@@ -28,6 +28,7 @@ jobs:
           BASE_API_URL: ${{ secrets.BASE_API_URL }}
           BASE_POST_URL: ${{ secrets.BASE_POST_URL }}
           BASE_URL: ${{ secrets.BASE_URL }}
+          HEADERS: ${{ secrets.HEADERS }}
 
       - name: Commit and Push
         run: |

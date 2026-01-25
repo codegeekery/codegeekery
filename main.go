@@ -23,7 +23,7 @@ func main() {
 	secretKey := os.Getenv("SECRET_KEY")
 	
 	fileName := "README.md"
-	startTag := "" // Asegúrate de que coincidan con tu README
+	startTag := "<!-- START POSTS -->"
 	endTag := ""
 
 	if baseAPIURL == "" || basePostURL == "" || headerName == "" || secretKey == "" {
