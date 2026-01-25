@@ -18,11 +18,11 @@ type Post struct {
 }
 
 func main() {
-	// 1. Configuración (Variables de entorno)
+	// Configuración (Variables de entorno)
 	apiURL := os.Getenv("BASE_API_URL")
 	postURL := strings.TrimSuffix(os.Getenv("BASE_POST_URL"), "/")
-	header := os.Getenv("HEADERS")    // X-ASTRAL-KERNEL
-	secret := os.Getenv("SECRET_KEY") // EX24123
+	header := os.Getenv("HEADERS") 
+	secret := os.Getenv("SECRET_KEY")
 
 	const (
 		fileName = "README.md"
@@ -30,7 +30,7 @@ func main() {
 		endTag   = "<!-- ARTICLES:END -->"
 	)
 
-	// 2. Fetch con Headers (Simulando tu fetchArticles)
+	// 2. Fetch con Headers
 	client := &http.Client{}
 	req, _ := http.NewRequest("GET", apiURL, nil)
 	req.Header.Add(header, secret)
@@ -52,7 +52,7 @@ func main() {
 		return
 	}
 
-	// 3. Construir Tabla (Siguiendo tu lógica de JS)
+	// 3. Construir Tabla Markdown
 	p := posts[:3]
 	imgRow := fmt.Sprintf("[![%s](%s?w=200&h=200)](%s/%s) | [![%s](%s?w=200&h=200)](%s/%s) | [![%s](%s?w=200&h=200)](%s/%s)",
 		p[0].Title, p[0].MainImage.Asset.URL, postURL, p[0].Slug.Current,
@@ -76,7 +76,7 @@ func main() {
 	reBlock := regexp.MustCompile("(?s)" + startTag + ".*?" + endTag)
 	updated = reBlock.ReplaceAllString(updated, startTag+"\n"+tableMarkdown+"\n"+endTag)
 
-	// Reemplazar o añadir Timestamp (Igual que tu JS)
+	// Reemplazar o añadir Timestamp
 	timestamp := time.Now().Format(time.RFC3339)
 	tsLine := fmt.Sprintf("<!-- Last updated: %s -->", timestamp)
 	reTS := regexp.MustCompile(`<!-- Last updated: .*? -->`)
@@ -88,5 +88,5 @@ func main() {
 	}
 
 	os.WriteFile(fileName, []byte(updated), 0644)
-	fmt.Println("🚀 README actualizado con éxito (Go style)!")
+	fmt.Println("✅ Blog section synchronized.")
 }
