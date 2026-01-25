@@ -3,112 +3,92 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
-	"regexp"
 	"strings"
-	"time"
 )
 
-// Estructura para mapear la respuesta de Astral Kernel (Sanity)
 type Post struct {
-	Title     string `json:"title"`
-	MainImage struct {
-		Asset struct {
-			URL string `json:"url"`
-		} `json:"asset"`
-	} `json:"mainImage"`
-	Slug struct {
-		Current string `json:"current"`
-	} `json:"slug"`
+	Title    string `json:"title"`
+	Slug     string `json:"slug"`
+	ImageUrl string `json:"imageUrl"`
 }
 
 func main() {
-	// 1. Configuración mediante variables de entorno
-	secretKey := os.Getenv("SECRET_KEY")
-	apiURL := os.Getenv("BASE_API_URL")
+	// Consumimos las variables de ambiente
 	basePostURL := os.Getenv("BASE_POST_URL")
-	baseURL := os.Getenv("BASE_URL")
-	userAgent := os.Getenv("USER_AGENT")
+	baseAPIURL  := os.Getenv("BASE_API_URL")
+	
+	// Valores por defecto para tags y nombre de archivo
+	fileName := "README.md"
+	startTag := "<!-- ARTICLES:START -->"
+	endTag   := "<!-- ARTICLES:END -->"
 
-	if secretKey == "" || apiURL == "" {
-		fmt.Println("Error: Configuración incompleta (SECRET_KEY o BASE_API_URL)")
-		os.Exit(1)
+	if baseAPIURL == "" || basePostURL == "" {
+		fmt.Println("Error: BASE_API_URL o BASE_POST_URL no están definidas")
+		return
 	}
 
-	// 2. Obtener los artículos desde el Backend (Go)
-	client := &http.Client{Timeout: 10 * time.Second}
-	req, _ := http.NewRequest("GET", apiURL, nil)
-	req.Header.Set("X-ASTRAL-KERNEL", secretKey)
-	req.Header.Set("User-Agent", userAgent)
-
-	resp, err := client.Do(req)
+	// 1. Obtener datos de tu API
+	resp, err := http.Get(baseAPIURL)
 	if err != nil {
-		fmt.Printf("Error conectando con la API: %v\n", err)
-		os.Exit(1)
+		fmt.Printf("Error llamando a la API: %v\n", err)
+		return
 	}
 	defer resp.Body.Close()
 
+	body, _ := io.ReadAll(resp.Body)
 	var posts []Post
-	if err := json.NewDecoder(resp.Body).Decode(&posts); err != nil {
+	if err := json.Unmarshal(body, &posts); err != nil {
 		fmt.Printf("Error parseando JSON: %v\n", err)
-		os.Exit(1)
+		return
 	}
 
-	// Tomamos solo los 3 últimos
-	if len(posts) > 3 {
-		posts = posts[:3]
-	}
+	// 2. Construir la tabla Markdown
+	markdownTable := generateTable(posts, basePostURL)
 
-	// 3. Construir la tabla de Markdown
-	var imgRow, sepRow, titleRow []string
-	for _, post := range posts {
-		imgURL := fmt.Sprintf("%s?w=200&h=200", post.MainImage.Asset.URL)
-		link := basePostURL + post.Slug.Current
-
-		imgRow = append(imgRow, fmt.Sprintf("[![%s](%s)](%s)", post.Title, imgURL, link))
-		sepRow = append(sepRow, "---")
-		titleRow = append(titleRow, fmt.Sprintf("**[%s](%s)**", post.Title, link))
-	}
-
-	// Unimos las filas con el formato de tabla de Markdown
-	tableContent := fmt.Sprintf("\n%s\n%s\n%s\n\n[➡️ More blog posts](%s)\n",
-		strings.Join(imgRow, " | "),
-		strings.Join(sepRow, " | "),
-		strings.Join(titleRow, " | "),
-		baseURL)
-
-	// 4. Leer el archivo README.md
-	readmePath := "README.md"
-	content, err := os.ReadFile(readmePath)
+	// 3. Leer y actualizar el archivo
+	content, err := os.ReadFile(fileName)
 	if err != nil {
-		fmt.Printf("Error leyendo README: %v\n", err)
-		os.Exit(1)
+		fmt.Printf("No se pudo leer el archivo: %v\n", err)
+		return
 	}
-	readmeText := string(content)
 
-	// --- LÓGICA DE IDENTIFICACIÓN ---
+	strContent := string(content)
+	startIndex := strings.Index(strContent, startTag)
+	endIndex := strings.Index(strContent, endTag)
 
-	// Identificar y reemplazar el bloque de artículos
-	// (?s) permite que el '.' incluya saltos de línea
-	reArticles := regexp.MustCompile(`(?s).*?`)
-	newArticlesBlock := fmt.Sprintf("%s", tableContent)
-	updated := reArticles.ReplaceAllString(readmeText, newArticlesBlock)
+	if startIndex == -1 || endIndex == -1 {
+		fmt.Println("No se encontraron los tags o ")
+		return
+	}
 
-	// Identificar y reemplazar el timestamp
-	// Formato ISO 8601 (2006-01-02T15:04:05Z)
-	timestamp := time.Now().UTC().Format("2006-01-02T15:04:05.000Z")
-	reTime := regexp.MustCompile(``)
-	newTimeLine := fmt.Sprintf("%s", timestamp)
-	
-	updated = reTime.ReplaceAllString(updated, newTimeLine)
+	// Reensamblar el archivo respetando los tags
+	newContent := strContent[:startIndex+len(startTag)] +
+		"\n" + markdownTable + "\n" +
+		strContent[endIndex:]
 
-	// 5. Guardar los cambios
-	err = os.WriteFile(readmePath, []byte(updated), 0644)
+	err = os.WriteFile(fileName, []byte(newContent), 0644)
 	if err != nil {
-		fmt.Printf("Error al escribir en README: %v\n", err)
-		os.Exit(1)
+		fmt.Printf("Error escribiendo el README: %v\n", err)
+		return
 	}
 
-	fmt.Println("✅ README.md actualizado con éxito mediante Go.")
+	fmt.Println("🚀 README actualizado correctamente con variables de entorno!")
+}
+
+func generateTable(posts []Post, basePostURL string) string {
+	var row1, row2, row3 []string
+
+	for _, p := range posts {
+		// Aseguramos que el slash final no se duplique
+		fullURL := strings.TrimSuffix(basePostURL, "/") + "/" + p.Slug
+		
+		row1 = append(row1, fmt.Sprintf("[![%s](%s?w=200&h=200)](%s)", p.Title, p.ImageUrl, fullURL))
+		row2 = append(row2, "---")
+		row3 = append(row3, fmt.Sprintf("**[%s](%s)**", p.Title, fullURL))
+	}
+
+	return strings.Join(row1, " | ") + "\n" + strings.Join(row2, " | ") + "\n" + strings.Join(row3, " | ")
 }
