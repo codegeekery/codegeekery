@@ -18,7 +18,8 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.21'
+          go-version: '1.25.6'
+          cache: false
 
       - name: Run Update Script
         run: go run main.go
