@@ -9,40 +9,41 @@ import (
 	"strings"
 )
 
+// Estructura adaptada a Sanity: Slug es un objeto con un campo "current"
 type Post struct {
 	Title    string `json:"title"`
-	Slug     string `json:"slug"`
+	Slug     struct {Current string `json:"current"`} `json:"slug"`
 	ImageUrl string `json:"imageUrl"`
 }
 
 func main() {
-	// 1. Obtener Variables de ambiente
+	// 1. Cargar Variables de Entorno
 	basePostURL := os.Getenv("BASE_POST_URL")
-	baseAPIURL := os.Getenv("BASE_API_URL")
-	headerName := os.Getenv("HEADERS")
-	secretKey := os.Getenv("SECRET_KEY")
+	baseAPIURL  := os.Getenv("BASE_API_URL")
+	headerKey   := os.Getenv("HEADERS")
+	secretValue := os.Getenv("SECRET_KEY")
 	
 	fileName := "README.md"
-	startTag := "<!-- START POSTS -->"
-	endTag := ""
+	startTag := "<!-- ARTICLES:START -->"
+	endTag   := "<!-- ARTICLES:END -->"
 
-	if baseAPIURL == "" || basePostURL == "" || headerName == "" || secretKey == "" {
-		fmt.Println("❌ Error: Faltan variables de entorno (URLs o Credenciales)")
+	if baseAPIURL == "" || basePostURL == "" || headerKey == "" || secretValue == "" {
+		fmt.Println("❌ Error: Faltan variables de entorno. Revisa BASE_API_URL, BASE_POST_URL, HEADERS y SECRET_KEY")
 		return
 	}
 
-	// 2. Configurar la petición con Headers
+	// 2. Configurar la petición HTTP con Headers de Seguridad
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", baseAPIURL, nil)
 	if err != nil {
-		fmt.Printf("❌ Error creando request: %v\n", err)
+		fmt.Printf("❌ Error creando la petición: %v\n", err)
 		return
 	}
 
-	// Inyectamos el Header Especial
-	req.Header.Add(headerName, secretKey)
+	// Añadimos la autenticación que pide tu backend
+	req.Header.Add(headerKey, secretValue)
 
-	// 3. Ejecutar la petición
+	// 3. Ejecutar Petición
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Printf("❌ Error de red: %v\n", err)
@@ -53,41 +54,45 @@ func main() {
 	body, _ := io.ReadAll(resp.Body)
 
 	if resp.StatusCode != http.StatusOK {
-		fmt.Printf("⚠️ API Error %d: %s\n", resp.StatusCode, string(body))
+		fmt.Printf("⚠️ Error API (Status %d): %s\n", resp.StatusCode, string(body))
 		return
 	}
 
+	// 4. Parsear JSON (Ahora coincide con el objeto slug de Sanity)
 	var posts []Post
 	if err := json.Unmarshal(body, &posts); err != nil {
-		fmt.Printf("❌ Error parseando JSON: %v\n", err)
+		fmt.Printf("❌ Error parseando JSON: %v\n📥 Body recibido: %s\n", err, string(body))
 		return
 	}
 
 	if len(posts) < 3 {
-		fmt.Println("⚠️ La API devolvió menos de 3 posts.")
+		fmt.Printf("⚠️ Se esperaban 3 posts, se recibieron %d\n", len(posts))
 		return
 	}
 
-	// 4. Construir la tabla (Sin usar FOR)
+	// 5. Construir Tabla Markdown (Accediendo a .Slug.Current)
 	cleanBase := strings.TrimSuffix(basePostURL, "/")
+
 	row1 := fmt.Sprintf("[![%s](%s?w=200&h=200)](%s/%s) | [![%s](%s?w=200&h=200)](%s/%s) | [![%s](%s?w=200&h=200)](%s/%s)",
-		posts[0].Title, posts[0].ImageUrl, cleanBase, posts[0].Slug,
-		posts[1].Title, posts[1].ImageUrl, cleanBase, posts[1].Slug,
-		posts[2].Title, posts[2].ImageUrl, cleanBase, posts[2].Slug,
+		posts[0].Title, posts[0].ImageUrl, cleanBase, posts[0].Slug.Current,
+		posts[1].Title, posts[1].ImageUrl, cleanBase, posts[1].Slug.Current,
+		posts[2].Title, posts[2].ImageUrl, cleanBase, posts[2].Slug.Current,
 	)
+
 	row2 := "--- | --- | ---"
+
 	row3 := fmt.Sprintf("**[%s](%s/%s)** | **[%s](%s/%s)** | **[%s](%s/%s)**",
-		posts[0].Title, cleanBase, posts[0].Slug,
-		posts[1].Title, cleanBase, posts[1].Slug,
-		posts[2].Title, cleanBase, posts[2].Slug,
+		posts[0].Title, cleanBase, posts[0].Slug.Current,
+		posts[1].Title, cleanBase, posts[1].Slug.Current,
+		posts[2].Title, cleanBase, posts[2].Slug.Current,
 	)
 
 	markdownTable := row1 + "\n" + row2 + "\n" + row3
 
-	// 5. Actualizar el README.md
+	// 6. Actualizar README.md
 	content, err := os.ReadFile(fileName)
 	if err != nil {
-		fmt.Println("❌ No se pudo leer el archivo README.md")
+		fmt.Printf("❌ Error leyendo %s: %v\n", fileName, err)
 		return
 	}
 	strContent := string(content)
@@ -96,10 +101,11 @@ func main() {
 	endIdx := strings.Index(strContent, endTag)
 
 	if startIdx == -1 || endIdx == -1 {
-		fmt.Println("❌ No se encontraron los marcadores en el README")
+		fmt.Println("❌ No se encontraron los marcadores en el archivo")
 		return
 	}
 
+	// Inyectar el nuevo contenido entre los tags
 	newContent := strContent[:startIdx+len(startTag)] + "\n\n" + markdownTable + "\n\n" + strContent[endIdx:]
 
 	err = os.WriteFile(fileName, []byte(newContent), 0644)
@@ -108,5 +114,5 @@ func main() {
 		return
 	}
 
-	fmt.Println("🚀 README actualizado con éxito usando autenticación!")
+	fmt.Println("🚀 README actualizado con éxito para CodeGeekery!")
 }
