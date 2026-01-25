@@ -8,8 +8,9 @@ const END = '<!-- ARTICLES:END -->';
 
 const SECRET_KEY = process.env.SECRET_KEY;
 const USER_AGENT = process.env.USER_AGENT;
-const BASE_URL = 'https://www.codegeekery.com/blog';
-const BASE_POST_URL = 'https://www.codegeekery.com/posts/';
+const BASE_URL = process.env.BASE_URL
+const BASE_POST_URL = process.env.BASE_POST_URL;
+const BASE_API_URL = process.env.BASE_API_URL;
 const TIMESTAMP_REGEX = /<!-- Última actualización: .*?-->/;
 
 if (!SECRET_KEY) {
@@ -19,13 +20,15 @@ if (!SECRET_KEY) {
 
 async function fetchArticles() {
   return new Promise((resolve, reject) => {
-    const url = new URL('https://www.codegeekery.com/api/latest');
+
+    const url = new URL(BASE_API_URL);
+
     const client = connect(url.origin);
 
     const req = client.request({
       ':method': 'GET',
       ':path': url.pathname,
-      'X-CODEGEEKERY': SECRET_KEY,
+      'X-ASTRAL-KERNEL': SECRET_KEY,
       'User-Agent': USER_AGENT,
     });
 
