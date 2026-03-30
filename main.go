@@ -33,13 +33,12 @@ func main() {
 	// 2. Fetch con Headers
 	client := &http.Client{}
 	req, _ := http.NewRequest("GET", apiURL, nil)
-	req.Header.Add(header, secret)
+	req.Header.Add(header, "Bearer "+secret)
 	req.Header.Add("User-Agent", "AstralKernel-Go/2.0")
 
 	resp, err := client.Do(req)
 	if err != nil || resp.StatusCode != 200 {
 		fmt.Println(resp)
-		// fmt.Println("❌ Error al obtener artículos")
 		return
 	}
 	defer resp.Body.Close()
