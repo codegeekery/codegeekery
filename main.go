@@ -34,7 +34,7 @@ func main() {
 	client := &http.Client{}
 	req, _ := http.NewRequest("GET", apiURL, nil)
 	req.Header.Add(header, secret)
-	req.Header.Add("User-Agent", "Go-Updater")
+	req.Header.Add("User-Agent", "AstralKernel-Go/2.0")
 
 	resp, err := client.Do(req)
 	if err != nil || resp.StatusCode != 200 {
