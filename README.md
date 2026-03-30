@@ -46,11 +46,11 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 
 <!-- ARTICLES:START -->
-[![Implementa Dokploy en tu Servidor](https://cdn.sanity.io/images/dtnjj5n5/production/22592572d82be0cc49348c9f36ef1a4d75964a9d-1024x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/68b90b56-5b3f-4de8-883c-d7e41574ebb3) | [![Corre tus Modelos de IA Donde Quieras con Ollama](https://cdn.sanity.io/images/dtnjj5n5/production/83f220636bc40eba3e73c3d034b2632b905dad87-1536x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/bef394d0-01ad-4bc7-8007-ca6941823d56) | [![Faker: una herramienta para generar datos ficticios](https://cdn.sanity.io/images/dtnjj5n5/production/0523f576d182ea9a582e0e5c1e67dd2df3c149d8-1024x1024.webp?w=200&h=200)](https://www.codegeekery.com/posts/fa1ba9c7-9233-4394-a9fe-e09f97ac65b7)
+[![La Ley de IA de la UE no es un simulacro: 5 realidades impactantes que cambiarán tu empresa para siempre](https://cdn.sanity.io/images/dtnjj5n5/production/60543e62b3e446f4c79d1944e1038d727529e692-2752x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632) | [![Marketing 2026: IA y Humanidad](https://cdn.sanity.io/images/dtnjj5n5/production/5461a9fa63cb745065cbed6e566ae6a9bb36d254-2816x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/1f82f1ad-10dc-4875-bd11-a1d7e7e4b9f4) | [![Como Fazer Email Marketing](https://cdn.sanity.io/images/dtnjj5n5/production/b7a28d3469c9f593afef49acd39897a3b983166d-2816x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/1ba2c033-1087-47ea-bf05-123c08be8e8e)
 --- | --- | ---
-**[Implementa Dokploy en tu Servidor](https://www.codegeekery.com/posts/68b90b56-5b3f-4de8-883c-d7e41574ebb3)** | **[Corre tus Modelos de IA Donde Quieras con Ollama](https://www.codegeekery.com/posts/bef394d0-01ad-4bc7-8007-ca6941823d56)** | **[Faker: una herramienta para generar datos ficticios](https://www.codegeekery.com/posts/fa1ba9c7-9233-4394-a9fe-e09f97ac65b7)**
+**[La Ley de IA de la UE no es un simulacro: 5 realidades impactantes que cambiarán tu empresa para siempre](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632)** | **[Marketing 2026: IA y Humanidad](https://www.astralkernel.pt/posts/1f82f1ad-10dc-4875-bd11-a1d7e7e4b9f4)** | **[Como Fazer Email Marketing](https://www.astralkernel.pt/posts/1ba2c033-1087-47ea-bf05-123c08be8e8e)**
 
-[➡️ More blog posts](https://www.codegeekery.com/blog)
+[➡️ More blog posts](https://www.astralkernel.pt/blog)
 <!-- ARTICLES:END -->
 
-<!-- Last updated: 2026-01-28T12:17:55Z -->
+<!-- Last updated: 2026-03-30T19:15:40Z -->
