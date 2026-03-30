@@ -38,7 +38,8 @@ func main() {
 
 	resp, err := client.Do(req)
 	if err != nil || resp.StatusCode != 200 {
-		fmt.Println("❌ Error al obtener artículos")
+		fmt.Println(err)
+		// fmt.Println("❌ Error al obtener artículos")
 		return
 	}
 	defer resp.Body.Close()
