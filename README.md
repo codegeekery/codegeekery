@@ -46,11 +46,11 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 
 <!-- ARTICLES:START -->
-[![La Ley de IA de la UE no es un simulacro: 5 realidades impactantes que cambiarán tu empresa para siempre](https://cdn.sanity.io/images/dtnjj5n5/production/60543e62b3e446f4c79d1944e1038d727529e692-2752x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632) | [![Marketing 2026: IA y Humanidad](https://cdn.sanity.io/images/dtnjj5n5/production/5461a9fa63cb745065cbed6e566ae6a9bb36d254-2816x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/1f82f1ad-10dc-4875-bd11-a1d7e7e4b9f4) | [![Como Fazer Email Marketing](https://cdn.sanity.io/images/dtnjj5n5/production/b7a28d3469c9f593afef49acd39897a3b983166d-2816x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/1ba2c033-1087-47ea-bf05-123c08be8e8e)
+[![A Lei de IA da UE não é um simulacro: 5 realidades impactantes que mudarão a sua empresa para sempre](https://cdn.sanity.io/images/dtnjj5n5/production/60543e62b3e446f4c79d1944e1038d727529e692-2752x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632) | [![Marketing 2026: IA y Humanidad](https://cdn.sanity.io/images/dtnjj5n5/production/5461a9fa63cb745065cbed6e566ae6a9bb36d254-2816x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/1f82f1ad-10dc-4875-bd11-a1d7e7e4b9f4) | [![Como Fazer Email Marketing](https://cdn.sanity.io/images/dtnjj5n5/production/b7a28d3469c9f593afef49acd39897a3b983166d-2816x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/1ba2c033-1087-47ea-bf05-123c08be8e8e)
 --- | --- | ---
-**[La Ley de IA de la UE no es un simulacro: 5 realidades impactantes que cambiarán tu empresa para siempre](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632)** | **[Marketing 2026: IA y Humanidad](https://www.astralkernel.pt/posts/1f82f1ad-10dc-4875-bd11-a1d7e7e4b9f4)** | **[Como Fazer Email Marketing](https://www.astralkernel.pt/posts/1ba2c033-1087-47ea-bf05-123c08be8e8e)**
+**[A Lei de IA da UE não é um simulacro: 5 realidades impactantes que mudarão a sua empresa para sempre](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632)** | **[Marketing 2026: IA y Humanidad](https://www.astralkernel.pt/posts/1f82f1ad-10dc-4875-bd11-a1d7e7e4b9f4)** | **[Como Fazer Email Marketing](https://www.astralkernel.pt/posts/1ba2c033-1087-47ea-bf05-123c08be8e8e)**
 
 [➡️ More blog posts](https://www.astralkernel.pt/blog)
 <!-- ARTICLES:END -->
 
-<!-- Last updated: 2026-05-02T00:32:04Z -->
+<!-- Last updated: 2026-05-02T12:18:25Z -->
