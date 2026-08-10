@@ -14,6 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: production  # Asegura que checkout en production
+          fetch-depth: 0   # Fetch completo
 
       - name: Set up Go
         uses: actions/setup-go@v4
@@ -31,10 +34,20 @@ jobs:
           BASE_URL: ${{ secrets.BASE_URL }}
           HEADERS: ${{ secrets.HEADERS }}
 
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Commit and Push
+        if: steps.check_changes.outputs.has_changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update README with latest blog posts"
+          git commit -m "Update README with latest blog posts - $(date -u +'%Y-%m-%d %H:%M:%S')"
           git push origin production
