@@ -46,11 +46,11 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 
 <!-- ARTICLES:START -->
-[![A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://cdn.sanity.io/images/dtnjj5n5/production/efb9b7cc3fe57a350acdfc20cd203c2cd9ebcff2-2740x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e) | [![A Lei de IA da UE não é um simulacro: 5 realidades impactantes que mudarão a sua empresa para sempre](https://cdn.sanity.io/images/dtnjj5n5/production/60543e62b3e446f4c79d1944e1038d727529e692-2752x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632) | [![Marketing 2026: IA y Humanidad](https://cdn.sanity.io/images/dtnjj5n5/production/5461a9fa63cb745065cbed6e566ae6a9bb36d254-2816x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/1f82f1ad-10dc-4875-bd11-a1d7e7e4b9f4)
+[![Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://cdn.sanity.io/images/dtnjj5n5/production/0c78a0f7eb868299cc8a77b55b5b54848adefcfe-2400x1309.webp?w=200&h=200)](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506) | [![A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://cdn.sanity.io/images/dtnjj5n5/production/efb9b7cc3fe57a350acdfc20cd203c2cd9ebcff2-2740x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e) | [![A Lei de IA da UE não é um simulacro: 5 realidades impactantes que mudarão a sua empresa para sempre](https://cdn.sanity.io/images/dtnjj5n5/production/60543e62b3e446f4c79d1944e1038d727529e692-2752x1536.webp?w=200&h=200)](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632)
 --- | --- | ---
-**[A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e)** | **[A Lei de IA da UE não é um simulacro: 5 realidades impactantes que mudarão a sua empresa para sempre](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632)** | **[Marketing 2026: IA y Humanidad](https://www.astralkernel.pt/posts/1f82f1ad-10dc-4875-bd11-a1d7e7e4b9f4)**
+**[Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506)** | **[A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e)** | **[A Lei de IA da UE não é um simulacro: 5 realidades impactantes que mudarão a sua empresa para sempre](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632)**
 
 [➡️ More blog posts](https://www.astralkernel.pt/blog)
 <!-- ARTICLES:END -->
 
-<!-- Last updated: 2026-08-11T01:13:32Z -->
+<!-- Last updated: 2026-08-11T12:50:39Z -->
