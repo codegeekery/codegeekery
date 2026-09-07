@@ -16,25 +16,25 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 ### Tecnologias
 
-[![My Skills](https://skillicons.dev/icons?i=js,py,raspberrypi,react,remix,tailwind,ts,vite,vscode,npm,redis,postgres,nodejs,nginx,nextjs,github,git,express,docker,css,cloudflare,aws,mongodb,notion,prisma,flask,githubactions,gitlab,html,supabase,go,deno)](https://skillicons.dev)
+[![My Skills](https://i.icoziv.workers.dev/icons?i=js,py,raspberrypi,react,remix,tailwind,ts,vite,vscode,npm,redis,postgres,nodejs,nginx,nextjs,github,git,express,docker,css,cloudflare,aws,mongodb,notion,prisma,flask,githubactions,gitlab,html,supabase,go,deno)](https://skillicons.dev)
 
 
 ### Sistema Operativo
 
-[![My Skills](https://skillicons.dev/icons?i=arch,windows,apple)](https://skillicons.dev)
+[![My Skills](https://i.icoziv.workers.dev/icons?i=arch,windows,apple)](https://skillicons.dev)
 
 
 ### Contacto
 
 <p align="left">
   <a href="https://www.linkedin.com/in/juan-gouveia/">
-    <img src="https://skillicons.dev/icons?i=linkedin" style="margin-right: 10px;" />
+    <img src="https://i.icoziv.workers.dev/icons?i=linkedin" style="margin-right: 10px;" />
   </a>
   <a href="https://x.com/codegeekery">
-    <img src="https://skillicons.dev/icons?i=twitter" style="margin-right: 10px;" />
+    <img src="https://i.icoziv.workers.dev/icons?i=twitter" style="margin-right: 10px;" />
   </a>
   <a href="https://discord.gg/zb5YCe4Zeb">
-    <img src="https://skillicons.dev/icons?i=discord" />
+    <img src="https://i.icoziv.workers.dev/icons?i=discord" />
   </a>
 </p>
 
