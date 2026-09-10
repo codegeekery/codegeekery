@@ -16,12 +16,12 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 ### Tecnologias
 
-[![My Skills](https://i.icoziv.workers.dev/icons?i=js,py,raspberrypi,react,remix,tailwind,ts,vite,vscode,npm,redis,postgres,nodejs,nginx,nextjs,github,git,express,docker,css,cloudflare,aws,mongodb,notion,prisma,flask,githubactions,gitlab,html,supabase,go,deno)](https://skillicons.dev)
+[![My Skills](https://i.icoziv.workers.dev/icons?i=js,py,raspberrypi,bash,lua,react,remix,tailwind,ts,vite,vscode,npm,redis,postgres,nodejs,nginx,nextjs,github,git,express,docker,css,cloudflare,aws,mongodb,notion,prisma,flask,githubactions,gitlab,html,supabase,go,deno)](https://skillicons.dev)
 
 
 ### Sistema Operativo
 
-[![My Skills](https://i.icoziv.workers.dev/icons?i=opensuse-dark,windows,macos-dark)](https://skillicons.dev)
+[![My Skills](https://i.icoziv.workers.dev/icons?i=opensuse-dark,windows,macos-dark, ubuntu, arch,debian,redhat)](https://skillicons.dev)
 
 
 ### Contacto
