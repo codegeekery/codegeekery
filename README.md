@@ -21,7 +21,7 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 ### Sistema Operativo
 
-[![My Skills](https://i.icoziv.workers.dev/icons?i=opensuse-dark,windows,macos-dark, ubuntu, arch,debian,redhat)](https://skillicons.dev)
+[![My Skills](https://i.icoziv.workers.dev/icons?i=opensuse,windows,macos,ubuntu,arch,debian,redhat&theme=dark)](https://github.com/thuongtruong109/icoziv)
 
 
 ### Contacto
