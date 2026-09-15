@@ -13,24 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
-          ref: production  # Asegura que checkout en production
-          fetch-depth: 0   # Fetch completo
+          ref: production
+          fetch-depth: 0
 
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
-          go-version: '1.25.6'
-          cache: false
+          go-version-file: go.mod
+          cache: true
 
       - name: Run Update Script
         run: go run main.go
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          USER_AGENT: ${{ secrets.USER_AGENT }}
           BASE_API_URL: ${{ secrets.BASE_API_URL }}
           BASE_POST_URL: ${{ secrets.BASE_POST_URL }}
+          USER_AGENT: ${{ secrets.USER_AGENT }}
           BASE_URL: ${{ secrets.BASE_URL }}
           HEADERS: ${{ secrets.HEADERS }}
 
