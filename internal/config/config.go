@@ -1,4 +1,4 @@
-package main
+package config
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ type Config struct {
 	BaseURL string
 }
 
-func loadConfig() (Config, error) {
+func Load() (Config, error) {
 	apiURL := os.Getenv("BASE_API_URL")
 	postURL := strings.TrimSuffix(os.Getenv("BASE_POST_URL"), "/")
 	header := os.Getenv("HEADERS")

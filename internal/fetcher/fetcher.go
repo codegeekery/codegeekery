@@ -1,4 +1,4 @@
-package main
+package fetcher
 
 import (
 	"encoding/json"
@@ -19,7 +19,7 @@ type Post struct {
 	MainImage struct{ Asset struct{ URL string `json:"url"` } `json:"asset"` } `json:"mainImage"`
 }
 
-func fetchPosts(apiURL, header, secret string) ([]Post, error) {
+func Fetch(apiURL, header, secret string) ([]Post, error) {
 	client := &http.Client{Timeout: httpTimeout}
 	req, err := http.NewRequest("GET", apiURL, nil)
 	if err != nil {

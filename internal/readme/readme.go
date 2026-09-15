@@ -1,4 +1,4 @@
-package main
+package readme
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ const (
 	maxPosts  = 3
 )
 
-func buildTable(posts []Post, postURL string) string {
+func BuildTable(posts []fetcher.Post, postURL string) string {
 	if len(posts) != maxPosts {
 		return ""
 	}
@@ -36,7 +36,7 @@ func buildTable(posts []Post, postURL string) string {
 	return imgRow + "\n--- | --- | ---\n" + titleRow + "\n\n[➡️ More blog posts](" + os.Getenv("BASE_URL") + ")"
 }
 
-func updateReadme(content []byte, table string) (string, error) {
+func Update(content []byte, table string) (string, error) {
 	updated := string(content)
 
 	reBlock := regexp.MustCompile("(?s)" + regexp.QuoteMeta(startTag) + ".*?" + regexp.QuoteMeta(endTag))
@@ -53,4 +53,12 @@ func updateReadme(content []byte, table string) (string, error) {
 	}
 
 	return updated, nil
+}
+
+func FileName() string {
+	return fileName
+}
+
+func MaxPosts() int {
+	return maxPosts
 }

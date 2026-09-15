@@ -3,41 +3,45 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"codegeekery/updater/internal/config"
+	"codegeekery/updater/internal/fetcher"
+	"codegeekery/updater/internal/readme"
 )
 
 func main() {
-	cfg, err := loadConfig()
+	cfg, err := config.Load()
 	if err != nil {
 		fmt.Printf("❌ %v\n", err)
 		os.Exit(1)
 	}
 
-	posts, err := fetchPosts(cfg.APIURL, cfg.Header, cfg.Secret)
+	posts, err := fetcher.Fetch(cfg.APIURL, cfg.Header, cfg.Secret)
 	if err != nil {
 		fmt.Printf("❌ %v\n", err)
 		os.Exit(1)
 	}
 
-	if len(posts) < maxPosts {
-		fmt.Printf("⚠️ Menos de %d artículos recibidos (got %d)\n", maxPosts, len(posts))
+	if len(posts) < readme.MaxPosts() {
+		fmt.Printf("⚠️ Menos de %d artículos recibidos (got %d)\n", readme.MaxPosts(), len(posts))
 		os.Exit(1)
 	}
 
-	table := buildTable(posts[:maxPosts], cfg.PostURL)
+	table := readme.BuildTable(posts[:readme.MaxPosts()], cfg.PostURL)
 
-	content, err := os.ReadFile(fileName)
+	content, err := os.ReadFile(readme.FileName())
 	if err != nil {
 		fmt.Printf("❌ Error leyendo README: %v\n", err)
 		os.Exit(1)
 	}
 
-	updated, err := updateReadme(content, table)
+	updated, err := readme.Update(content, table)
 	if err != nil {
 		fmt.Printf("❌ %v\n", err)
 		os.Exit(1)
 	}
 
-	if err := os.WriteFile(fileName, []byte(updated), 0644); err != nil {
+	if err := os.WriteFile(readme.FileName(), []byte(updated), 0644); err != nil {
 		fmt.Printf("❌ Error escribiendo README: %v\n", err)
 		os.Exit(1)
 	}
