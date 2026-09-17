@@ -1,30 +1,29 @@
-## Sobre Mí  
+## About Me  
 
-Hola Fellows 👋, me llamo **Juan** y nací en **1999**.  
+Hello Fellows 👋, my name is **Juan** and I was born in **1999**.  
 
-Desde pequeño, mostraba mucho interes por la **tecnología**. Mis Padres a los **7 años** me regalaron una computadora, aunque en ese momento la usaba principalmente para ver mi caricatura favorita de la época Scooby Doo 🐶🔎😂.
+Since I was little, I showed a lot of interest in **technology**. My parents gave me a computer when I was **7 years old**, although at that time I mainly used it to watch my favorite cartoon of the time, Scooby Doo 🐶🔎😂.
 
-A los **12 años**, Conoci a un grupo de amigos que jugaban videos juegos, lo que despertó aún más mi curiosidad por la tecnologia. Mi primer Juego que juge se llama Mu Online. aprendi muchas cosas que a dia de hoy se aplican como tecnologia cuando empeze a jugar el juego siempre me preguntaba como se almacenaban las cosas dentro del juego como sabia el juego que ese item estaba en mi inventario y cosas asi fueron lo que me motivo a descubrir mas sobre la tecnologia
+At **12 years old**, I met a group of friends who played video games, which sparked my curiosity about technology even more. The first game I played was called Mu Online. I learned a lot of things that are applied as technology today — when I started playing the game, I always wondered how things were stored inside the game, how the game knew that item was in my inventory, and things like that were what motivated me to discover more about technology.
 
-Hoy en día, sigo **emprendiendo mi camino autodidacta** 🚀.
-
+Today, I continue **pursuing my self-taught path** 🚀.
 
 
 <a href="https://www.x.com/codegeekery" target="_blank" rel="noreferrer"><img
 src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-the-badge&color=10b981&labelColor=1c1917"
 /></a>
 
-### Tecnologias
+### Technology
 
 [![My Skills](https://i.icoziv.workers.dev/icons?i=js,py,raspberrypi,bash,lua,react,remix,tailwind,ts,vite,vscode,npm,redis,postgres,nodejs,nginx,nextjs,github,git,express,docker,css,cloudflare,aws,mongodb,notion,prisma,flask,githubactions,gitlab,html,supabase,go,deno)](https://skillicons.dev)
 
 
-### Sistema Operativo
+### OS
 
 [![My Skills](https://i.icoziv.workers.dev/icons?i=opensuse,windows,macos,ubuntu,arch,debian,redhat&theme=dark)](https://github.com/thuongtruong109/icoziv)
 
 
-### Contacto
+### Contact
 
 <p align="left">
   <a href="https://www.linkedin.com/in/juan-gouveia/">
