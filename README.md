@@ -45,11 +45,11 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 
 <!-- ARTICLES:START -->
-[![Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://cms.astralkernel.pt/api/files/pbc_1125843985/mcjmt3z6vbzyrwx/7527693452012814336_nheg9oe5e2.avif?w=200&h=200)](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506) | [![A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://cms.astralkernel.pt/api/files/pbc_1125843985/dc9fbq0ixfus28k/7527693813880586240_wkq65j6lbd.avif?w=200&h=200)](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e) | [![A Lei de IA da UE não é um simulacro: 5 realidades impactantes que mudarão a sua empresa para sempre](https://cms.astralkernel.pt/api/files/pbc_1125843985/3vrxk50nwyz2577/7527694093045071872_myn0cxw1v2.avif?w=200&h=200)](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632)
+[![Microsoft Offline: O Preço de Concentrar Tudo na Nuvem](https://cms.astralkernel.pt/api/files/pbc_1125843985/q0e0owspw4ukjg8/7528318067688996864_20dyjlaazc.avif?w=200&h=200)](https://www.astralkernel.pt/posts/3b053ca7-2822-4512-a9a7-fcb8dbf11b12) | [![Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://cms.astralkernel.pt/api/files/pbc_1125843985/mcjmt3z6vbzyrwx/7527693452012814336_nheg9oe5e2.avif?w=200&h=200)](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506) | [![A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://cms.astralkernel.pt/api/files/pbc_1125843985/dc9fbq0ixfus28k/7527693813880586240_wkq65j6lbd.avif?w=200&h=200)](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e)
 --- | --- | ---
-**[Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506)** | **[A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e)** | **[A Lei de IA da UE não é um simulacro: 5 realidades impactantes que mudarão a sua empresa para sempre](https://www.astralkernel.pt/posts/6551d812-0284-49cb-9385-2cadc1d79632)**
+**[Microsoft Offline: O Preço de Concentrar Tudo na Nuvem](https://www.astralkernel.pt/posts/3b053ca7-2822-4512-a9a7-fcb8dbf11b12)** | **[Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506)** | **[A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e)**
 
 [➡️ More blog posts](https://www.astralkernel.pt/blog)
 <!-- ARTICLES:END -->
 
-<!-- Last updated: 2026-11-17T01:44:59Z -->
+<!-- Last updated: 2026-11-17T15:42:34Z -->
