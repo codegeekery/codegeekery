@@ -45,11 +45,11 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 
 
 <!-- ARTICLES:START -->
-[![Microsoft Offline: O Preço de Concentrar Tudo na Nuvem](https://cms.astralkernel.pt/api/files/pbc_1125843985/q0e0owspw4ukjg8/7528318067688996864_20dyjlaazc.avif?w=200&h=200)](https://www.astralkernel.pt/posts/3b053ca7-2822-4512-a9a7-fcb8dbf11b12) | [![Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://cms.astralkernel.pt/api/files/pbc_1125843985/mcjmt3z6vbzyrwx/7527693452012814336_nheg9oe5e2.avif?w=200&h=200)](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506) | [![A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://cms.astralkernel.pt/api/files/pbc_1125843985/dc9fbq0ixfus28k/7527693813880586240_wkq65j6lbd.avif?w=200&h=200)](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e)
+[![Terramoto na Nvidia e Novas Sanções dos EUA: Como o Cerco aos Chips de IA Está a Redesenhar o Mapa dos Data Centers Globais](https://cms.astralkernel.pt/api/files/pbc_1125843985/myisfs17g6mswjq/7528636219023032397_kd6a1lc7gh.avif?w=200&h=200)](https://www.astralkernel.pt/posts/8377a034-3b46-42cd-ba8c-1bc12cac59d3) | [![Microsoft Offline: O Preço de Concentrar Tudo na Nuvem](https://cms.astralkernel.pt/api/files/pbc_1125843985/q0e0owspw4ukjg8/7528318067688996864_20dyjlaazc.avif?w=200&h=200)](https://www.astralkernel.pt/posts/3b053ca7-2822-4512-a9a7-fcb8dbf11b12) | [![Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://cms.astralkernel.pt/api/files/pbc_1125843985/mcjmt3z6vbzyrwx/7527693452012814336_nheg9oe5e2.avif?w=200&h=200)](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506)
 --- | --- | ---
-**[Microsoft Offline: O Preço de Concentrar Tudo na Nuvem](https://www.astralkernel.pt/posts/3b053ca7-2822-4512-a9a7-fcb8dbf11b12)** | **[Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506)** | **[A Ameaça de 1 Bilião de Dólares que Está a Mudar as Regras do Jogo](https://www.astralkernel.pt/posts/6b93b525-ee4d-4032-b9fa-161cdb654a9e)**
+**[Terramoto na Nvidia e Novas Sanções dos EUA: Como o Cerco aos Chips de IA Está a Redesenhar o Mapa dos Data Centers Globais](https://www.astralkernel.pt/posts/8377a034-3b46-42cd-ba8c-1bc12cac59d3)** | **[Microsoft Offline: O Preço de Concentrar Tudo na Nuvem](https://www.astralkernel.pt/posts/3b053ca7-2822-4512-a9a7-fcb8dbf11b12)** | **[Sob o Capô: 9 Vulnerabilidades Docker que Estão a Colocar a Sua Infraestrutura em Risco](https://www.astralkernel.pt/posts/6f9a86bb-a783-4d12-9d31-634100afd506)**
 
 [➡️ More blog posts](https://www.astralkernel.pt/blog)
 <!-- ARTICLES:END -->
 
-<!-- Last updated: 2026-11-18T00:44:52Z -->
+<!-- Last updated: 2026-11-18T15:22:07Z -->
