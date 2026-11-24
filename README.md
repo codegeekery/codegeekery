@@ -52,4 +52,4 @@ src="https://img.shields.io/twitter/follow/codegeekery?logo=twitter&style=for-th
 [➡️ More blog posts](https://www.astralkernel.pt/blog)
 <!-- ARTICLES:END -->
 
-<!-- Last updated: 2026-11-23T23:36:20Z -->
+<!-- Last updated: 2026-11-24T09:05:45Z -->
